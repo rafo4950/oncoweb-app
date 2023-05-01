@@ -34,7 +34,7 @@ export const InputMixed: FC = () => (
       <DateTimePicker
         label="Start date"
         onChange={() => {}}
-        renderInput={(inputProps) => (
+        renderInput={(inputProps: any) => (
           <TextField
             fullWidth
             {...inputProps}

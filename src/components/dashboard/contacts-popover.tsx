@@ -13,7 +13,6 @@ import {
   Popover,
   Typography
 } from '@mui/material';
-import { getContacts } from '../../slices/chat';
 import { useDispatch, useSelector } from '../../store';
 import { StatusIndicator } from '../status-indicator';
 
@@ -27,14 +26,6 @@ export const ContactsPopover: FC<ContactsPopoverProps> = (props) => {
   const { anchorEl, onClose, open, ...other } = props;
   const dispatch = useDispatch();
   const { contacts } = useSelector((state) => state.chat);
-
-  useEffect(
-    () => {
-      dispatch(getContacts());
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
 
   return (
     <Popover
